@@ -1,10 +1,11 @@
 import pygame as pg
 
-from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS
+from dino_runner.utils.constants import BG, ICON, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, obstacles
 
 from dino_runner.components.dinosaur import Dinosaur
 from dino_runner.components.cloud import Cloud
-
+from dino_runner.components.obstacles_class.cactus import SmallCactus, LargeCactus
+from dino_runner.components.obstacles_class.bird import Bird
 class Game:
     def __init__(self):
         pg.init()
@@ -36,13 +37,14 @@ class Game:
     def update(self):
         user_input = pg.key.get_pressed()
         self.player.update(user_input)
-
+        self.cloud.update()
 
     def draw(self):
         self.clock.tick(FPS)
         self.screen.fill((255, 255, 255))
         self.draw_background()
         self.player.draw(self.screen)
+        self.cloud.draw(self.screen)
         pg.display.update()
         pg.display.flip()
 
