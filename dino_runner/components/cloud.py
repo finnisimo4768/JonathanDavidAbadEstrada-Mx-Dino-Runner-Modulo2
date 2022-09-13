@@ -1,7 +1,7 @@
 import random as rdm
 from dino_runner.utils.constants import SCREEN_WIDTH, CLOUD
 
-speed_cloud = 16
+speed_cloud = 17
 
 class Cloud:
     def __init__(self):
