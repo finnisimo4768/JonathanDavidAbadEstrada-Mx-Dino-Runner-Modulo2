@@ -12,17 +12,14 @@ class ObstacleManager:
 
     def update(self, game):
         if len(self.obstacles) == 0:
-            if rd.randint(0, 3) == 0:
+            if rd.randint(0, 2) == 0:
                 self.obstacles.append(Cactus(SMALL_CACTUS, 325))
 
-            elif rd.randint(0, 3) == 1:
+            elif rd.randint(0, 2) == 1:
                 self.obstacles.append(Cactus(LARGE_CACTUS, 300))
 
-            elif rd.randint(0, 3) == 2:
-                self.obstacles.append(Bird(BIRD, 270))
-
-            elif rd.randint(0, 3) == 3:
-                self.obstacles.append(Bird(BIRD, 325))
+            elif rd.randint(0, 2) == 2:
+                self.obstacles.append(Bird(BIRD))
 
         for obstacle in self.obstacles:
             obstacle.update(self.obstacles)

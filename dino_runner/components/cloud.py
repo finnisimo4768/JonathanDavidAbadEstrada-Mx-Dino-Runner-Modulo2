@@ -10,7 +10,7 @@ class Cloud:
     def update(self):
         self.cloud_x -= SPEED
         if self.cloud_x < -self.width:
-            self.cloud_x = SCREEN_WIDTH + rdm.randint(2500, 3000)
+            self.cloud_x = SCREEN_WIDTH + rdm.randint(2000, 3000)
             self.cloud_y = rdm.randint(50, 100)
 
     
