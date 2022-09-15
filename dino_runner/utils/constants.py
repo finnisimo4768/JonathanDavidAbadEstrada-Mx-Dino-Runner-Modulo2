@@ -45,6 +45,8 @@ DUCKING_HAMMER = [
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
 ]
 
+DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
+
 SMALL_CACTUS = [
     pg.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus1.png")),
     pg.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus2.png")),
