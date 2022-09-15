@@ -1,7 +1,7 @@
 import pygame as pg
 import random as rd
 
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, SCREEN_HEIGHT, SCREEN_WIDTH, FONT_STYLE
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
 

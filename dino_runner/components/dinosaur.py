@@ -1,10 +1,12 @@
 import pygame as pg
+from pygame.sprite import Sprite
+
 from dino_runner.utils.constants import DUCKING, RUNNING, JUMPING
 
 DINO_RECT_X = 80
 DINO_RECT_Y= 310
 JUMP_VEL = 8.5
-class Dinosaur:
+class Dinosaur(Sprite):
     def __init__(self):
         self.image = RUNNING[0]
         self.dino_rect = self.image.get_rect()

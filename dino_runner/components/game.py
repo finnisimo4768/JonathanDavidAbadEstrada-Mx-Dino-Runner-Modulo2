@@ -35,14 +35,18 @@ class Game:
         self.running = True
         while self.running:
             if not self.playing:
-                self.score = 0
-                self.death_count = 0
-                self.show_menu()
+                if self.death_count == 0:
+                    self.show_menu()
+                else:
+                    self.screen_death()
+
         pg.display.quit()
         pg.quit()
 
     def run(self):
         # Game loop: events - update - draw
+        self.score = 0
+        self.game_speed = 20
         self.obstacle_manager.reset_obstacle()
         self.playing = True
         while self.playing:
@@ -112,22 +116,22 @@ class Game:
 
         self.running = True
 
-        while self.running:
-            if self.death_count == 0:
-                half_screen_height = SCREEN_HEIGHT // 2
-                half_screen_width = SCREEN_WIDTH // 2
-                self.gen_text('Pres any key to start ..', half_screen_width, half_screen_height)
+        half_screen_height = SCREEN_HEIGHT // 2
+        half_screen_width = SCREEN_WIDTH // 2
+        self.gen_text('Pres any key to start ..', half_screen_width, half_screen_height)
 
-            else:
-                save_score = self.score
-                half_screen_height = SCREEN_HEIGHT // 2
-                half_screen_width = SCREEN_WIDTH // 2
+        pg.display.update()
+        self.handle_events_on_menu()
 
-                self.screen.fill((255, 255, 255))
-                self.screen.blit(GAME_OVER, (365, 100))
-                self.screen.blit(DINO_DEAD, (500, 190))
-                self.gen_text_score(save_score, 'Score', half_screen_width, half_screen_height + 50)
-                self.gen_text_score(self.death_count, 'Death Count', half_screen_width, half_screen_height + 100)
+    def screen_death(self):
+        half_screen_height = SCREEN_HEIGHT // 2
+        half_screen_width = SCREEN_WIDTH // 2
 
-            pg.display.update()
-            self.handle_events_on_menu()
+        self.screen.fill((255, 255, 255))
+        self.screen.blit(GAME_OVER, (365, 100))
+        self.screen.blit(DINO_DEAD, (500, 190))
+        self.gen_text_score(self.score, 'Score', half_screen_width, half_screen_height + 50)
+        self.gen_text_score(self.death_count, 'Death Count', half_screen_width, half_screen_height + 100)
+
+        pg.display.update()
+        self.handle_events_on_menu()

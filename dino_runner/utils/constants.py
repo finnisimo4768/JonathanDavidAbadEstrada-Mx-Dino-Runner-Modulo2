@@ -11,6 +11,7 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 # Assets Constants
 ICON = pg.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
 DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
+
 RUNNING = [
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoRun2.png")),
@@ -44,8 +45,6 @@ DUCKING_HAMMER = [
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck1Hammer.png")),
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
 ]
-
-DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
 
 SMALL_CACTUS = [
     pg.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus1.png")),
