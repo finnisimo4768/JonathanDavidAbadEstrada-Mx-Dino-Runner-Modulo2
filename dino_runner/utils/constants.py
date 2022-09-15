@@ -12,6 +12,7 @@ IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets Constants
 ICON = pg.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
+DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png")),
 
 RUNNING = [
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoRun1.png")),
@@ -47,6 +48,8 @@ DUCKING_HAMMER = [
     pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDuck2.png")),
 ]
 
+DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
+
 SMALL_CACTUS = [
     pg.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus1.png")),
     pg.image.load(os.path.join(IMG_DIR, "Cactus/SmallCactus2.png")),
@@ -71,4 +74,9 @@ BG = pg.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
 HEART = pg.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
+GAME_OVER = pg.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
+
+DEFAULT_TYPE = "default"
+
+FONT_STYLE = 'freesansbold.ttf'
 DEFAULT_TYPE = "default"
