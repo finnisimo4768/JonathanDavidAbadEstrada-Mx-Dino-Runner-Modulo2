@@ -1,7 +1,7 @@
 import pygame as pg
 from pygame.sprite import Sprite
 
-from dino_runner.utils.constants import DUCKING, RUNNING, JUMPING
+from dino_runner.utils.constants import DUCKING, RUNNING, JUMPING, DINO_SOUND_JUMP
 
 DINO_RECT_X = 80
 DINO_RECT_Y= 310
@@ -31,6 +31,7 @@ class Dinosaur(Sprite):
             self.duck()
 
         if (user_input[pg.K_UP] and not self.dino_jump) or (user_input[pg.K_SPACE] and not self.dino_jump):
+            DINO_SOUND_JUMP.play()
             self.dino_duck = False
             self.dino_run = False
             self.dino_jump = True

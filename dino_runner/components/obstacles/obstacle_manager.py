@@ -1,7 +1,7 @@
 import pygame as pg
 import random as rd
 
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, SCREEN_HEIGHT, SCREEN_WIDTH, FONT_STYLE
+from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, DINO_SOUND_LOSER
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
 
@@ -25,6 +25,7 @@ class ObstacleManager:
             obstacle.update(game.game_speed, self.obstacles)
             if game.player.dino_rect.colliderect(obstacle.rect):
                 game.death_count += 1
+                DINO_SOUND_LOSER.play()
                 game.playing = False
                 break
 

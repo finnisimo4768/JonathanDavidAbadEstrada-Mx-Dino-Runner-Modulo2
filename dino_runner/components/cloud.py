@@ -4,13 +4,13 @@ class Cloud:
     def __init__(self):
         self.image = CLOUD
         self.width = self.image.get_width()
-        self.cloud_x = SCREEN_WIDTH + rdm.randint(800, 1000)
-        self.cloud_y = rdm.randint(50, 100)
+        self.cloud_x = SCREEN_WIDTH + rdm.randint(250, 600)
+        self.cloud_y = rdm.randint(50, 300)
 
     def update(self, game_speed):
         self.cloud_x -= game_speed
         if self.cloud_x < -self.width:
-            self.cloud_x = SCREEN_WIDTH + rdm.randint(2000, 3000)
+            self.cloud_x = SCREEN_WIDTH + rdm.randint(200, 600)
             self.cloud_y = rdm.randint(50, 100)
 
     

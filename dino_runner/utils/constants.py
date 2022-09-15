@@ -1,4 +1,5 @@
 import pygame as pg
+from pygame import mixer
 import os
 
 # Global Constants
@@ -75,3 +76,7 @@ GAME_OVER = pg.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
 DEFAULT_TYPE = "default"
 
 FONT_STYLE = 'freesansbold.ttf'
+
+pg.mixer.init()
+DINO_SOUND_JUMP = pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Sound_Jump_Dino.wav'))
+DINO_SOUND_LOSER = pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Sound_Loser.wav'))
