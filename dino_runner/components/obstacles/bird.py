@@ -3,13 +3,12 @@ import random as rd
 
 from dino_runner.components.obstacles.obstacles import Obstacle
 
-RECT_BIRD_Y = 250
-step_index_bird = 0
+
 class Bird(Obstacle):
-    def __init__(self, image, pos_y):
+    def __init__(self, image):
         self.type = 0
         super().__init__(image, self.type)
-        self.rect.y = pos_y
+        self.rect.y = rd.randint(270, 325)
         self.index = 0
 
     def draw(self, screen):
