@@ -1,5 +1,4 @@
 import pygame as pg
-
 from dino_runner.utils.constants import DUCKING, RUNNING, JUMPING
 
 DINO_RECT_X = 80

@@ -6,6 +6,8 @@ TITLE = "Chrome Dino Runner"
 SCREEN_HEIGHT = 600
 SCREEN_WIDTH = 1100
 FPS = 30
+SPEED = 12
+obstacles = []
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
 # Assets Constants
@@ -69,8 +71,4 @@ BG = pg.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
 HEART = pg.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
-GAME_OVER = pg.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
-
 DEFAULT_TYPE = "default"
-
-FONT_STYLE = 'freesansbold.ttf'
