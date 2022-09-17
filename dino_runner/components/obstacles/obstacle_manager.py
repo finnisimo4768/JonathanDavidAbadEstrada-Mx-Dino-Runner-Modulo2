@@ -1,7 +1,7 @@
 import pygame as pg
 import random as rd
 
-from dino_runner.utils.constants import SMALL_CACTUS, LARGE_CACTUS, BIRD, DINO_SOUND_LOSER
+from dino_runner.utils.constants import SHIELD_TYPE, SMALL_CACTUS, LARGE_CACTUS, BIRD, SOUND, HAMMER_TYPE, SOUND
 from dino_runner.components.obstacles.cactus import Cactus
 from dino_runner.components.obstacles.bird import Bird
 
@@ -24,10 +24,13 @@ class ObstacleManager:
         for obstacle in self.obstacles:
             obstacle.update(game.game_speed, self.obstacles)
             if game.player.dino_rect.colliderect(obstacle.rect):
-                game.death_count += 1
-                DINO_SOUND_LOSER.play()
-                game.playing = False
-                break
+                if game.player.type != SHIELD_TYPE and game.player.type != HAMMER_TYPE:
+                    game.death_count += 1
+                    SOUND[1].play()
+                    game.playing = False
+                    break
+                else:
+                    self.obstacles.remove(obstacle)
 
     def draw(self, screen):
         for obstacle in self.obstacles:

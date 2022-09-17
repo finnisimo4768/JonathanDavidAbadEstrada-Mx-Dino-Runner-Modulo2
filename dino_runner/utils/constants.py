@@ -9,8 +9,19 @@ SCREEN_WIDTH = 1100
 FPS = 30
 IMG_DIR = os.path.join(os.path.dirname(__file__), "..", "assets")
 
+COLOURS = {
+    'red' : (255, 0, 0),
+    'green': (0, 255, 0),
+    'blue': (0, 0, 255),
+    'white': (255, 255, 255),
+    'black': (0, 0, 0),
+    'purple': (138, 32, 94),
+    'yellow': (255, 255, 0)
+}
+
 # Assets Constants
 ICON = pg.image.load(os.path.join(IMG_DIR, "DinoWallpaper.png"))
+
 DINO_DEAD = pg.image.load(os.path.join(IMG_DIR, "Dino/DinoDead.png"))
 
 RUNNING = [
@@ -66,6 +77,7 @@ BIRD = [
 CLOUD = pg.image.load(os.path.join(IMG_DIR, 'Other/Cloud.png'))
 SHIELD = pg.image.load(os.path.join(IMG_DIR, 'Other/shield.png'))
 HAMMER = pg.image.load(os.path.join(IMG_DIR, 'Other/hammer.png'))
+HEART = pg.image.load(os.path.join(IMG_DIR, 'Other/SmallHeart.png'))
 
 BG = pg.image.load(os.path.join(IMG_DIR, 'Other/Track.png'))
 
@@ -75,8 +87,36 @@ GAME_OVER = pg.image.load(os.path.join(IMG_DIR, 'Other/GameOver.png'))
 
 DEFAULT_TYPE = "default"
 
-FONT_STYLE = 'freesansbold.ttf'
+FONT_STYLE = os.path.join(IMG_DIR, 'Font/Minecraft.ttf')
 
 pg.mixer.init()
-DINO_SOUND_JUMP = pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Sound_Jump_Dino.wav'))
-DINO_SOUND_LOSER = pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Sound_Loser.wav'))
+
+SOUND = [
+    pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Jump.wav')),
+    pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Sound_Loser.wav')),
+    pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Shield.wav')),
+    pg.mixer.Sound(os.path.join(IMG_DIR, 'Sound/Dino_Hammer.wav'))
+]
+
+SHIELD_TYPE = 'shield'
+HAMMER_TYPE = 'hammer'
+
+DUCK_IMG = {
+    DEFAULT_TYPE: DUCKING,
+    SHIELD_TYPE: DUCKING_SHIELD,
+    HAMMER_TYPE: DUCKING_HAMMER
+}
+
+JUMP_IMG = {
+    DEFAULT_TYPE: JUMPING,
+    SHIELD_TYPE: JUMPING_SHIELD,
+    HAMMER_TYPE: JUMPING_HAMMER
+}
+
+RUN_IMG = {
+    DEFAULT_TYPE: RUNNING,
+    SHIELD_TYPE: RUNNING_SHIELD,
+    HAMMER_TYPE: RUNNING_HAMMER
+}
+
+
